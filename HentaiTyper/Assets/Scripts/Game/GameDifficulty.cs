@@ -7,6 +7,8 @@ public class GameDifficulty : ScriptableObject {
 	[Header("Global speed mult")]
 	public float startSpeedMult;
 	public float slowmoSpeedMult;
+	public float slowmoMaxTime;
+	public float slowmoRefreshRate;
 
 	[Header("Words speed")]
 	public float wordSpeedMin;

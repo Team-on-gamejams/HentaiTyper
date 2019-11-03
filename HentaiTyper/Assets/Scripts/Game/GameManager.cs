@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour {
 	WordsData wordsData;
 	List<MovingWord> movingWords;
 
+	float currSlowmo;
+
 	float currSpeedMin;
 	float currSpeedMax;
 
@@ -35,7 +37,25 @@ public class GameManager : MonoBehaviour {
 		if((elapsedTime += Time.deltaTime) >= currTimer) 
 			LaunchNewWord();
 
-		MovingWord.speedMult = Input.GetKey(KeyCode.Space) ? difficulty.slowmoSpeedMult : difficulty.startSpeedMult;
+		if (Input.GetKey(KeyCode.Space)) {
+			if(currSlowmo > 0) {
+				MovingWord.speedMult = difficulty.slowmoSpeedMult;
+				currSlowmo -= Time.deltaTime;
+			}
+			else {
+				MovingWord.speedMult = difficulty.startSpeedMult;
+			}
+		}
+		else {
+			MovingWord.speedMult = difficulty.startSpeedMult;
+
+			if(currSlowmo < difficulty.slowmoMaxTime) {
+				currSlowmo += Time.deltaTime * difficulty.slowmoRefreshRate;
+				if (currSlowmo > difficulty.slowmoMaxTime)
+					currSlowmo = difficulty.slowmoMaxTime;
+			}
+		}
+
 
 		foreach (MovingWord word in movingWords) 
 			word.ProcessMove();
@@ -60,6 +80,8 @@ public class GameManager : MonoBehaviour {
 
 		wordsData = wordsDataList[isLeftMode ? 1 : 0];
 		difficulty = difficulties[1];
+
+		currSlowmo = difficulty.slowmoMaxTime;
 
 		currSpeedMin = difficulty.wordSpeedMin;
 		currSpeedMax = difficulty.wordSpeedMax;
