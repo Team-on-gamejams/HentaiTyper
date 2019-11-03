@@ -2194,6 +2194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8009032ac58088241b61aa575cea489f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainCamera: {fileID: 519420031}
   difficulties:
   - {fileID: 11400000, guid: 3a7957765a2d63b4c803d90e50249e22, type: 2}
   - {fileID: 11400000, guid: a9948017b3e78b14b879df024250ad57, type: 2}
@@ -2201,6 +2202,8 @@ MonoBehaviour:
   wordsDataList:
   - {fileID: 11400000, guid: a8a1ea43100e9a14093729f37f90d383, type: 2}
   - {fileID: 11400000, guid: 30ac8585a6a929d488b419207927e3e9, type: 2}
+  MovingWordPrefab: {fileID: 508116072647372366, guid: 8b8e6370e0cc81c49a006993d264892b,
+    type: 3}
 --- !u!1 &1980353177
 GameObject:
   m_ObjectHideFlags: 0

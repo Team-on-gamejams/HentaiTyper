@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: WordsDataLeftOnly
   m_EditorClassIdentifier: 
   words:
-  - word: W
+  - word: w
     images:
     - {fileID: 21300000, guid: 64c131aecaa4d034faf35d35d53fae29, type: 3}
-  - word: A
+  - word: a
     images:
     - {fileID: 21300000, guid: 64c131aecaa4d034faf35d35d53fae29, type: 3}
     - {fileID: 21300000, guid: 4568cc50f64590940817d2d5b92655c5, type: 3}
-  - word: S
+  - word: s
     images:
     - {fileID: 21300000, guid: a1dd9f950a40df84491d9f1ee1ced619, type: 3}
     - {fileID: 21300000, guid: 73ef9f5d5aa0c704993d96d83317db8a, type: 3}
-  - word: D
+  - word: d
     images:
     - {fileID: 21300000, guid: f0ab82acfcf66f34db904364745a305a, type: 3}
     - {fileID: 21300000, guid: 0742b6500c8188245b64c583fd680107, type: 3}

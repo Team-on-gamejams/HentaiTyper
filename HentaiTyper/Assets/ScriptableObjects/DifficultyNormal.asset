@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeedMult: 1
   slowmoSpeedMult: 0.5
-  wordSpeedMin: 1
-  wordSpeedMax: 5
-  speedAddPerWord: 1
+  wordSpeedMin: 80
+  wordSpeedMax: 160
+  speedAddPerWord: 10
   wordTimerMin: 2
   wordTimerMax: 3
   timerAddPerWord: -0.05

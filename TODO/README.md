@@ -1,6 +1,7 @@
 - [ ] Core gameplay
-  - [ ] Words appear & moving
-  - [ ] Typing
+  - [X] Words appear & moving
+    - [ ] Better look for words
+  - [X] Typing
   - [ ] Arts appear
   - [ ] Lose condition
   - [ ] Keyboard UI
@@ -9,6 +10,7 @@
 - [ ] Left-hand-only mode
 - [ ] Slow motion
 - [ ] Different difficulty
+- [ ] Highscores
 - [X] Menus
   - [ ] Menus animation
 - [ ] Sounds

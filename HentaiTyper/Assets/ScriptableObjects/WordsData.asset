@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: WordsData
   m_EditorClassIdentifier: 
   words:
-  - word: Baka
+  - word: baka
     images:
     - {fileID: 21300000, guid: 64c131aecaa4d034faf35d35d53fae29, type: 3}
-  - word: BBaka
+  - word: b-baka
     images:
     - {fileID: 21300000, guid: 64c131aecaa4d034faf35d35d53fae29, type: 3}
     - {fileID: 21300000, guid: 4568cc50f64590940817d2d5b92655c5, type: 3}
