@@ -37,42 +37,11 @@ public class GameManager : MonoBehaviour {
 		if((elapsedTime += Time.deltaTime) >= currTimer) 
 			LaunchNewWord();
 
-		if (Input.GetKey(KeyCode.Space)) {
-			if(currSlowmo > 0) {
-				MovingWord.speedMult = difficulty.slowmoSpeedMult;
-				currSlowmo -= Time.deltaTime;
-			}
-			else {
-				MovingWord.speedMult = difficulty.startSpeedMult;
-			}
-		}
-		else {
-			MovingWord.speedMult = difficulty.startSpeedMult;
-
-			if(currSlowmo < difficulty.slowmoMaxTime) {
-				currSlowmo += Time.deltaTime * difficulty.slowmoRefreshRate;
-				if (currSlowmo > difficulty.slowmoMaxTime)
-					currSlowmo = difficulty.slowmoMaxTime;
-			}
-		}
-
-
 		foreach (MovingWord word in movingWords) 
 			word.ProcessMove();
 
-		foreach (char c in Input.inputString) {
-			bool processThis = false;
-			if (char.IsLetterOrDigit(c) || c == '-' || c == ' ') {
-				char cLower = char.ToLower(c);
-				foreach (MovingWord word in movingWords) {
-					processThis = word.ProcessChar(cLower);
-					if (processThis)
-						break;
-				}
-			}
-			if (processThis)
-				break;
-		}
+		ProcessSlowmo();
+		ProcessInput();
 	}
 
 	public void StartGame(bool isLeftMode) {
@@ -113,5 +82,51 @@ public class GameManager : MonoBehaviour {
 
 		currSpeedMin += difficulty.speedAddPerWord;
 		currSpeedMax += difficulty.speedAddPerWord;
+	}
+
+	void ProcessSlowmo() {
+		if (Input.GetKey(KeyCode.Space)) {
+			if (currSlowmo > 0) {
+				MovingWord.speedMult = difficulty.slowmoSpeedMult;
+				currSlowmo -= Time.deltaTime;
+			}
+			else {
+				MovingWord.speedMult = difficulty.startSpeedMult;
+			}
+		}
+		else {
+			MovingWord.speedMult = difficulty.startSpeedMult;
+
+			if (currSlowmo < difficulty.slowmoMaxTime) {
+				currSlowmo += Time.deltaTime * difficulty.slowmoRefreshRate;
+				if (currSlowmo > difficulty.slowmoMaxTime)
+					currSlowmo = difficulty.slowmoMaxTime;
+			}
+		}
+	}
+
+	void ProcessInput() {
+		//foreach (char c in Input.inputString) {
+		//	bool processThis = false;
+		//	if (char.IsLetterOrDigit(c) || c == '-' || c == ' ') {
+		//		char cLower = char.ToLower(c);
+		//		foreach (MovingWord word in movingWords) {
+		//			processThis = word.ProcessChar(cLower);
+		//			if (processThis)
+		//				break;
+		//		}
+		//	}
+		//	if (processThis)
+		//		break;
+		//}
+
+		if (movingWords.Count != 0) {
+			foreach (char c in Input.inputString) {
+				if (char.IsLetterOrDigit(c) || c == '-' || c == ' ') {
+					char cLower = char.ToLower(c);
+					movingWords[0].ProcessChar(cLower);
+				}
+			}
+		}
 	}
 }
