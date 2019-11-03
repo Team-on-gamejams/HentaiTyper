@@ -8,7 +8,8 @@
 - [ ] Keyboard temperature
 - [ ] FBI! Hold ESC to hide
 - [ ] Left-hand-only mode
-- [ ] Slow motion
+- [X] Slow motion
+  - [X] UI
 - [ ] Different difficulty
 - [ ] Highscores
 - [X] Menus

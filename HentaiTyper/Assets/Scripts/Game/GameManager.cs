@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
 	public bool IsPlaying => wordsData != null;
 
 	[SerializeField] Camera mainCamera;
+	[SerializeField] SlowmoSlider slowmoSlider;
 
 	[SerializeField] List<GameDifficulty> difficulties;
 	[SerializeField] List<WordsData> wordsDataList;
@@ -51,6 +52,7 @@ public class GameManager : MonoBehaviour {
 		difficulty = difficulties[1];
 
 		currSlowmo = difficulty.slowmoMaxTime;
+		slowmoSlider.Init(0, currSlowmo);
 
 		currSpeedMin = difficulty.wordSpeedMin;
 		currSpeedMax = difficulty.wordSpeedMax;
@@ -89,6 +91,9 @@ public class GameManager : MonoBehaviour {
 			if (currSlowmo > 0) {
 				MovingWord.speedMult = difficulty.slowmoSpeedMult;
 				currSlowmo -= Time.deltaTime;
+				if (currSlowmo < 0)
+					currSlowmo = 0;
+				slowmoSlider.UpdateValue(currSlowmo);
 			}
 			else {
 				MovingWord.speedMult = difficulty.startSpeedMult;
@@ -101,6 +106,7 @@ public class GameManager : MonoBehaviour {
 				currSlowmo += Time.deltaTime * difficulty.slowmoRefreshRate;
 				if (currSlowmo > difficulty.slowmoMaxTime)
 					currSlowmo = difficulty.slowmoMaxTime;
+				slowmoSlider.UpdateValue(currSlowmo);
 			}
 		}
 	}
