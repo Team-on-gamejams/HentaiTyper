@@ -8,6 +8,7 @@ public class MovingWord : MonoBehaviour {
 	public static float speedMult = 1.0f;
 
 	[NonSerialized] public float speed;
+	[NonSerialized] public Action onTyped;
 
 	[SerializeField] TextMeshProUGUI text;
 
@@ -46,5 +47,6 @@ public class MovingWord : MonoBehaviour {
 
 	void OnTyped() {
 		isTyped = true;
+		onTyped?.Invoke();
 	}
 }

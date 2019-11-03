@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour {
 
 		movingWord.speed = Random.Range(currSpeedMin, currSpeedMax);
 		movingWord.SetWord(RandomEx.GetRandom(wordsData.words));
+		movingWord.onTyped += OnWordTyped;
 
 		movingWords.Add(movingWord);
 
@@ -134,5 +135,9 @@ public class GameManager : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	void OnWordTyped() {
+		movingWords.RemoveAt(0);
 	}
 }
