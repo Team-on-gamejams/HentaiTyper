@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feabd98b3055849438c7c7adb9b275d5, type: 3}
+  m_Name: DifficultyEasy
+  m_EditorClassIdentifier: 
+  startSpeedMult: 1
+  slowmoSpeedMult: 0.5
+  wordSpeedMin: 1
+  wordSpeedMax: 3
+  speedAddPerWord: 0.5
+  wordTimerMin: 2
+  wordTimerMax: 3
+  timerAddPerWord: 0

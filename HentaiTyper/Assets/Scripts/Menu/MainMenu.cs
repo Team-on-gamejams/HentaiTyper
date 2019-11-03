@@ -5,11 +5,15 @@ using UnityEditor;
 
 public class MainMenu : MenuBase {
 	public void OnPlayClick() {
-		MenuManager.TransitTo(MenuManager.GetNeededMenu<GameMenu>());
+		GameMenu gameMenu = MenuManager.GetNeededMenu<GameMenu>();
+		gameMenu.isLeftMode = false;
+		MenuManager.TransitTo(gameMenu);
 	}
 
 	public void OnPlayLeftClick() {
-		MenuManager.TransitTo(MenuManager.GetNeededMenu<GameMenu>());
+		GameMenu gameMenu = MenuManager.GetNeededMenu<GameMenu>();
+		gameMenu.isLeftMode = true;
+		MenuManager.TransitTo(gameMenu);
 	}
 
 	public void OnCreditsClick() {

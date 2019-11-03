@@ -1014,12 +1014,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1079,7 +1079,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56883df7cee7391498841ac7821f828b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstMenuId: 0
+  FirstMenuId: 2
   Menus:
   - {fileID: 394166329}
   - {fileID: 530420661}
@@ -2128,6 +2128,7 @@ GameObject:
   - component: {fileID: 1687316044}
   - component: {fileID: 1687316046}
   - component: {fileID: 1687316045}
+  - component: {fileID: 1687316047}
   m_Layer: 5
   m_Name: Game
   m_TagString: Untagged
@@ -2168,6 +2169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9168e7db8bf45344aac438c8b9743b4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLeftMode: 0
 --- !u!225 &1687316046
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2180,6 +2182,25 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1687316047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687316043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8009032ac58088241b61aa575cea489f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficulties:
+  - {fileID: 11400000, guid: 3a7957765a2d63b4c803d90e50249e22, type: 2}
+  - {fileID: 11400000, guid: a9948017b3e78b14b879df024250ad57, type: 2}
+  - {fileID: 11400000, guid: 7f6d0b2335ceee54da86537fe51bde3c, type: 2}
+  wordsDataList:
+  - {fileID: 11400000, guid: a8a1ea43100e9a14093729f37f90d383, type: 2}
+  - {fileID: 11400000, guid: 30ac8585a6a929d488b419207927e3e9, type: 2}
 --- !u!1 &1980353177
 GameObject:
   m_ObjectHideFlags: 0
