@@ -6,9 +6,11 @@ using TMPro;
 
 public class MovingWord : MonoBehaviour {
 	public static float speedMult = 1.0f;
+	public static float endX = 0.0f;
 
 	[NonSerialized] public float speed;
 	[NonSerialized] public Action onTyped;
+	[NonSerialized] public Action onReachEnd;
 
 	[SerializeField] TextMeshProUGUI text;
 
@@ -41,8 +43,11 @@ public class MovingWord : MonoBehaviour {
 	}
 
 	public void ProcessMove() {
-		if(!isTyped)
-			transform.Translate(-speed * speedMult * Time.deltaTime, 0, 0); 
+		if (!isTyped) {
+			transform.Translate(-speed * speedMult * Time.deltaTime, 0, 0);
+			if (transform.position.x < endX)
+				onReachEnd?.Invoke();
+		}
 	}
 
 	void OnTyped() {

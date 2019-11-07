@@ -3,8 +3,9 @@
     - [ ] Better look for words
   - [X] Typing
   - [ ] Arts appear
-  - [ ] Lose condition
+  - [X] Lose condition
   - [ ] Keyboard UI
+  - [ ] Object pool for words & images
 - [ ] Keyboard temperature
 - [ ] FBI! Hold ESC to hide
 - [ ] Left-hand-only mode
@@ -12,6 +13,7 @@
   - [X] UI
 - [ ] Different difficulty
 - [ ] Highscores
+- [X] Pause
 - [X] Menus
   - [ ] Menus animation
 - [ ] Sounds

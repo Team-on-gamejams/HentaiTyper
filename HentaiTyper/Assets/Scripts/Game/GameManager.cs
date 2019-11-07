@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
+	public static bool IsPaused = false;
+
 	public bool IsPlaying => wordsData != null;
 
+	[SerializeField] MenuManager MenuManager;
 	[SerializeField] Camera mainCamera;
 	[SerializeField] SlowmoSlider slowmoSlider;
 
@@ -16,6 +19,8 @@ public class GameManager : MonoBehaviour {
 	GameDifficulty difficulty;
 	WordsData wordsData;
 	List<MovingWord> movingWords;
+
+	bool isLose;
 
 	float currSlowmo;
 
@@ -29,10 +34,12 @@ public class GameManager : MonoBehaviour {
 
 	void Awake() {
 		movingWords = new List<MovingWord>();
+
+		MovingWord.endX = mainCamera.ViewportToWorldPoint(new Vector3(MovingWord.endX, 0)).x;
 	}
 
 	void Update() {
-		if (!IsPlaying)
+		if (!IsPlaying || IsPaused)
 			return;
 
 		if((elapsedTime += Time.deltaTime) >= currTimer) 
@@ -46,6 +53,11 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void StartGame(bool isLeftMode) {
+		IsPaused = false;
+		isLose = false;
+		foreach (var word in movingWords) {
+			Destroy(word.gameObject);
+		}
 		movingWords.Clear();
 
 		wordsData = wordsDataList[isLeftMode ? 1 : 0];
@@ -79,6 +91,7 @@ public class GameManager : MonoBehaviour {
 
 		movingWord.speed = Random.Range(currSpeedMin, currSpeedMax);
 		movingWord.SetWord(RandomEx.GetRandom(wordsData.words));
+		movingWord.onReachEnd += Lose;
 		movingWord.onTyped += OnWordTyped;
 
 		movingWords.Add(movingWord);
@@ -135,9 +148,24 @@ public class GameManager : MonoBehaviour {
 				}
 			}
 		}
+
+		if (Input.GetKeyDown(KeyCode.Escape) && !isLose) {
+			if (IsPaused) {
+				MenuManager.ShowMenuFromStack();
+			}
+			else {
+				MenuManager.TransitTo(MenuManager.GetNeededMenu<PauseMenu>(), false);
+			}
+		}
 	}
 
 	void OnWordTyped() {
 		movingWords.RemoveAt(0);
+	}
+
+	void Lose() {
+		isLose = true;
+		IsPaused= true;
+		MenuManager.TransitTo(MenuManager.GetNeededMenu<LoseMenu>(), false);
 	}
 }

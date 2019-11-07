@@ -6,13 +6,14 @@ using UnityEngine;
 public class MenuManager : MonoBehaviour {
 	[SerializeField] byte FirstMenuId;
 	[SerializeField] MenuBase[] Menus;
-	MenuBase currMenu;
+	Stack<MenuBase> currMenu;
 
 	void Start() {
-		currMenu = Menus[FirstMenuId];
+		currMenu = new Stack<MenuBase>();
+		currMenu.Push(Menus[FirstMenuId]);
 
 		foreach (var menu in Menus) {
-			if (menu != currMenu)
+			if (menu != currMenu.Peek())
 				menu.Hide();
 			else
 				menu.Show();
@@ -21,9 +22,22 @@ public class MenuManager : MonoBehaviour {
 		}
 	}
 
-	public void TransitTo(MenuBase menu) {
-		currMenu.Hide();
-		(currMenu = menu).Show();
+	public void HideAll() {
+		while(currMenu.Count != 0)
+			currMenu.Pop().Hide();
+	}
+
+	public void ShowMenuFromStack() {
+		currMenu.Pop().Hide();
+	}
+
+	public void TransitTo(MenuBase menu, bool hidePrev = true) {
+		if (hidePrev && currMenu.Count > 0) {
+			currMenu.Pop().Hide();
+		}
+
+		currMenu.Push(menu);
+		menu.Show();
 	}
 
 	public T GetNeededMenu<T>() where T : MenuBase {
