@@ -1,27 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour {
 	public static bool IsPaused = false;
 
 	public bool IsPlaying => wordsData != null;
 
-	[SerializeField] MenuManager MenuManager;
+	[SerializeField] MenuManager menuManager;
 	[SerializeField] Camera mainCamera;
 	[SerializeField] SlowmoSlider slowmoSlider;
+	[SerializeField] TextMeshProUGUI scoreText;
 
 	[SerializeField] List<GameDifficulty> difficulties;
 	[SerializeField] List<WordsData> wordsDataList;
 
-	[SerializeField] GameObject MovingWordPrefab;
-	[SerializeField] GameObject FlyingImagePrefab;
+	[SerializeField] GameObject movingWordPrefab;
+	[SerializeField] GameObject flyingImagePrefab;
 
 	GameDifficulty difficulty;
 	WordsData wordsData;
 	List<MovingWord> movingWords;
 
 	bool isLose;
+	int score;
 
 	float currSlowmo;
 
@@ -56,6 +59,8 @@ public class GameManager : MonoBehaviour {
 	public void StartGame(bool isLeftMode) {
 		IsPaused = false;
 		isLose = false;
+		score = 0;
+
 		foreach (var word in movingWords) {
 			Destroy(word.gameObject);
 		}
@@ -87,7 +92,7 @@ public class GameManager : MonoBehaviour {
 		currTimerMax += difficulty.timerAddPerWord;
 		currTimer = Random.Range(currTimerMin, currTimerMax);
 
-		GameObject go = Instantiate(MovingWordPrefab, mainCamera.ViewportToScreenPoint(new Vector3(1.0f, Random.Range(0.2f, 0.8f))), Quaternion.identity, transform);
+		GameObject go = Instantiate(movingWordPrefab, mainCamera.ViewportToScreenPoint(new Vector3(1.0f, Random.Range(0.2f, 0.8f))), Quaternion.identity, transform);
 		MovingWord movingWord = go.GetComponent<MovingWord>();
 
 		movingWord.speed = Random.Range(currSpeedMin, currSpeedMax);
@@ -152,17 +157,17 @@ public class GameManager : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.Escape) && !isLose) {
 			if (IsPaused) {
-				MenuManager.ShowMenuFromStack();
+				menuManager.ShowMenuFromStack();
 			}
 			else {
-				MenuManager.TransitTo(MenuManager.GetNeededMenu<PauseMenu>(), false);
+				menuManager.TransitTo(menuManager.GetNeededMenu<PauseMenu>(), false);
 			}
 		}
 	}
 
 	void OnWordTyped() {
 		GameObject go = Instantiate(
-			FlyingImagePrefab, 
+			flyingImagePrefab, 
 			mainCamera.ViewportToScreenPoint(new Vector3(Random.Range(0.4f, 0.6f), Random.Range(0.4f, 0.6f))),
 			Quaternion.identity,
 			transform
@@ -172,12 +177,13 @@ public class GameManager : MonoBehaviour {
 		image.SetImage(movingWords[0].GetRandomImage(), movingWords[0].transform.position);
 
 		Destroy(movingWords[0].gameObject);
+		scoreText.text = (score += movingWords[0].GetScore()).ToString();
 		movingWords.RemoveAt(0);
 	}
 
 	void Lose() {
 		isLose = true;
 		IsPaused= true;
-		MenuManager.TransitTo(MenuManager.GetNeededMenu<LoseMenu>(), false);
+		menuManager.TransitTo(menuManager.GetNeededMenu<LoseMenu>(), false);
 	}
 }

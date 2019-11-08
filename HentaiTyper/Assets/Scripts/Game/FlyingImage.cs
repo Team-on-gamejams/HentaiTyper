@@ -21,7 +21,7 @@ public class FlyingImage : MonoBehaviour {
 		nativeSize = image.rectTransform.sizeDelta;
 		image.rectTransform.sizeDelta /= Random.Range(1f, 3f);
 		image.transform.position = pos;
-		image.transform.localRotation = Quaternion.Euler(0, 0, Random.Range(-45f, 34f));
+		image.transform.localRotation = Quaternion.Euler(0, 0, Random.Range(-25f, 25f));
 		image.transform.SetAsFirstSibling();
 
 		Color c = image.color;

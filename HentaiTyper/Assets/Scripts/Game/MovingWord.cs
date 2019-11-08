@@ -56,6 +56,10 @@ public class MovingWord : MonoBehaviour {
 		return word.images[Random.Range(0, word.images.Count)];
 	}
 
+	public int GetScore() {
+		return word.word.Length;
+	}
+
 	void OnTyped() {
 		isTyped = true;
 		onTyped?.Invoke();

@@ -7,7 +7,7 @@
   - [ ] Keyboard UI
   - [ ] Object pool for words & images
 - [ ] Keyboard temperature
-- [ ] FBI! Hold ESC to hide
+- [X] Score
 - [ ] Left-hand-only mode
 - [X] Slow motion
   - [X] UI
