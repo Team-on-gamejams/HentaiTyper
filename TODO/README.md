@@ -1,4 +1,4 @@
-- [ ] Core gameplay
+- [X] Core gameplay
   - [X] Words appear & moving
     - [X] Better look for words
   - [X] Typing
@@ -6,14 +6,14 @@
   - [X] Lose condition
   - [NO] Keyboard UI
   - [NO] Object pool for words & images
-- [ ] Keyboard temperature
+- [NO] Keyboard temperature
 - [X] Score
 - [ ] Left-hand-only mode
 - [X] Slow motion
   - [X] UI
 - [NO] FBI! Hold ESC to hide
 - [ ] Different difficulty
-- [ ] Highscores
+- [NO] Highscores
 - [X] Pause
 - [X] Menus
   - [NO] Menus animation

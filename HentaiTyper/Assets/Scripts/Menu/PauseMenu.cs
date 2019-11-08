@@ -7,6 +7,11 @@ public class PauseMenu : MenuBase {
 		MenuManager.ShowMenuFromStack();
 	}
 
+	public void OnMenuClick() {
+		MenuManager.HideAll();
+		MenuManager.TransitTo(MenuManager.GetNeededMenu<MainMenu>());
+	}
+
 	protected override void OnEnter() {
 		GameManager.IsPaused = true;
 	}

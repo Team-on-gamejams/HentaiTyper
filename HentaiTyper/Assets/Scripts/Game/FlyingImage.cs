@@ -43,12 +43,12 @@ public class FlyingImage : MonoBehaviour {
 		float alphaStep = alphaDelta / timeForAnim;
 
 		while (image.rectTransform.sizeDelta.x < nativeSize.x && image.rectTransform.sizeDelta.y < nativeSize.y) {
-			image.rectTransform.sizeDelta += sizeStep * Time.deltaTime * Vector2.one;
+			image.rectTransform.sizeDelta += sizeStep * Time.deltaTime * MovingWord.speedMult * Vector2.one;
 
-			image.transform.Rotate(0, 0, rotateStep * Time.deltaTime);
+			image.transform.Rotate(0, 0, rotateStep * Time.deltaTime * MovingWord.speedMult);
 
 			Color c = image.color;
-			c.a += alphaStep * Time.deltaTime;
+			c.a += alphaStep * Time.deltaTime * MovingWord.speedMult;
 			image.color = c;
 
 			yield return null;

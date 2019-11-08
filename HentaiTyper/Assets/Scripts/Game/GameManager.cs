@@ -61,9 +61,9 @@ public class GameManager : MonoBehaviour {
 		isLose = false;
 		scoreText.text = (score = 0).ToString();
 
-		foreach (var word in movingWords) {
-			Destroy(word.gameObject);
-		}
+		foreach (var word in movingWords) 
+			if(word)
+				Destroy(word.gameObject);
 		movingWords.Clear();
 
 		wordsData = wordsDataList[isLeftMode ? 1 : 0];
@@ -185,5 +185,9 @@ public class GameManager : MonoBehaviour {
 		isLose = true;
 		IsPaused= true;
 		menuManager.TransitTo(menuManager.GetNeededMenu<LoseMenu>(), false);
+
+		foreach (var word in movingWords)
+			if (word)
+				Destroy(word.gameObject);
 	}
 }
