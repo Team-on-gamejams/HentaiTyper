@@ -14,8 +14,9 @@ public class MovingWord : MonoBehaviour {
 	[NonSerialized] public Action onTyped;
 	[NonSerialized] public Action onReachEnd;
 
-	[SerializeField] TextMeshProUGUI text;
+	[SerializeField] GameObject letterPrefab;
 
+	TextMeshProUGUI[] letters;
 	Word word;
 	byte currLetter;
 	bool isTyped;
@@ -26,17 +27,21 @@ public class MovingWord : MonoBehaviour {
 		currLetter = 0;
 		isTyped = false;
 
-		text.text = word.word;
+		letters = new TextMeshProUGUI[word.word.Length];
+		for(byte i = 0; i < letters.Length; ++i) {
+			letters[i] = Instantiate(letterPrefab, transform.position + new Vector3(i * 52, 0), Quaternion.identity, transform).GetComponentInChildren<TextMeshProUGUI>();
+			letters[i].text = word.word[i].ToString();
+		}
 	}
 
 	public bool ProcessChar(char c) {
 		if(!isTyped && word.word[currLetter] == c) {
 			if(currLetter != word.word.Length - 1) {
+				letters[currLetter].text = "_";
 				++currLetter;
-				text.text = word.word.Substring(currLetter);
 			}
 			else {
-				text.text = "";
+				letters[currLetter].text = "_";
 				OnTyped();
 			}
 			return true;

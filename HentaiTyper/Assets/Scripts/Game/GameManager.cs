@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour {
 	public void StartGame(bool isLeftMode) {
 		IsPaused = false;
 		isLose = false;
-		score = 0;
+		scoreText.text = (score = 0).ToString();
 
 		foreach (var word in movingWords) {
 			Destroy(word.gameObject);

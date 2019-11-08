@@ -1,6 +1,6 @@
 - [ ] Core gameplay
   - [X] Words appear & moving
-    - [ ] Better look for words
+    - [X] Better look for words
   - [X] Typing
   - [X] Arts appear
   - [X] Lose condition
@@ -17,3 +17,4 @@
 - [X] Menus
   - [ ] Menus animation
 - [ ] Sounds
+- [ ] Runtime parsing images
