@@ -21,4 +21,4 @@ MonoBehaviour:
   speedAddPerWord: 10
   wordTimerMin: 1
   wordTimerMax: 2
-  timerAddPerWord: -0.05
+  timerAddPerWord: -0.01

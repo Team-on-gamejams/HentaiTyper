@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -207}
+  m_AnchoredPosition: {x: -175.69995, y: -207}
   m_SizeDelta: {x: 399.5, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2840344
@@ -749,7 +749,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 163}
+  m_AnchoredPosition: {x: -175.69995, y: 163}
   m_SizeDelta: {x: 399.5, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &386885407
@@ -1542,8 +1542,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 572.7, y: -22}
-  m_SizeDelta: {x: 693.9, y: 460}
+  m_AnchoredPosition: {x: 493.7, y: -22}
+  m_SizeDelta: {x: 887.1, y: 460}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &635318911
 MonoBehaviour:
@@ -1563,13 +1563,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<color=red>Debuff</color>
+  m_text: '<color=orange>Just normal difficulty</color>
 
-
-    <color=orange>Just info NORMAL</color>
-
-
-    <color=green>Buff</color>'
+    <color=orange>Not too hard, if you play with 2 hands</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1638,12 +1634,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 635318911}
-    characterCount: 30
+    characterCount: 61
     spriteCount: 0
-    spaceCount: 6
-    wordCount: 5
+    spaceCount: 11
+    wordCount: 12
     linkCount: 0
-    lineCount: 5
+    lineCount: 2
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -1967,8 +1963,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 572.7, y: -22}
-  m_SizeDelta: {x: 693.9, y: 460}
+  m_AnchoredPosition: {x: 493.7, y: -22}
+  m_SizeDelta: {x: 887.1, y: 460}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &688228434
 MonoBehaviour:
@@ -1988,13 +1984,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<color=red>Debuff</color>
+  m_text: '<color=green>Slowmo time increased from 5 to 10</color>
+
+    <color=green>Slowmo refresh rate increased from 0.5 to 0.75</color>
 
 
-    <color=orange>Just info</color>
+    <color=green>Word speed decreased from 200-220 to 150-160</color>
 
+    <color=green>Word acceleration decreased from 10 to 5</color>
 
-    <color=green>Buff EASY</color>'
+    <color=green>Word spawn rate decreased from 1 to 0.75</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2063,12 +2062,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 688228434}
-    characterCount: 28
+    characterCount: 209
     spriteCount: 0
-    spaceCount: 6
-    wordCount: 5
+    spaceCount: 37
+    wordCount: 40
     linkCount: 0
-    lineCount: 5
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -2626,7 +2625,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 1}
+  m_SizeDelta: {x: 1.2, y: 1}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &960376695
 MonoBehaviour:
@@ -2783,7 +2782,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 43}
+  m_AnchoredPosition: {x: -175.69995, y: 43}
   m_SizeDelta: {x: 399.5, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &964709546
@@ -2981,7 +2980,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -292.2, y: 270}
+  m_AnchoredPosition: {x: -467.89996, y: 270}
   m_SizeDelta: {x: 618.5, y: 79.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &996250109
@@ -3139,7 +3138,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -75}
+  m_AnchoredPosition: {x: -175.69995, y: -75}
   m_SizeDelta: {x: 399.5, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1052131973
@@ -3279,8 +3278,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 572.7, y: -22}
-  m_SizeDelta: {x: 693.9, y: 460}
+  m_AnchoredPosition: {x: 493.7, y: -22}
+  m_SizeDelta: {x: 887.1, y: 460}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1161241453
 MonoBehaviour:
@@ -3300,13 +3299,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<color=red>Debuff HARD</color>
+  m_text: '<color=red>Slowmo refresh rate decreased from 0.5 to 0.25</color>
 
 
-    <color=orange>Just info</color>
+    <color=red>Word speed increased from 200-220 to 300-320</color>
 
+    <color=red>Word acceleration increased from 10 to 15</color>
 
-    <color=green>Buff</color>'
+    <color=red>Word spawn rate increased from 1 to 1.5</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3375,10 +3375,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1161241453}
-    characterCount: 28
+    characterCount: 174
     spriteCount: 0
-    spaceCount: 6
-    wordCount: 5
+    spaceCount: 30
+    wordCount: 33
     linkCount: 0
     lineCount: 5
     pageCount: 1
