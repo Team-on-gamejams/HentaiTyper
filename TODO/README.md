@@ -4,17 +4,19 @@
   - [X] Typing
   - [X] Arts appear
   - [X] Lose condition
-  - [ ] Keyboard UI
-  - [ ] Object pool for words & images
+  - [NO] Keyboard UI
+  - [NO] Object pool for words & images
 - [ ] Keyboard temperature
 - [X] Score
 - [ ] Left-hand-only mode
 - [X] Slow motion
   - [X] UI
+- [NO] FBI! Hold ESC to hide
 - [ ] Different difficulty
 - [ ] Highscores
 - [X] Pause
 - [X] Menus
-  - [ ] Menus animation
+  - [NO] Menus animation
+  - [X] Better menus
 - [ ] Sounds
 - [ ] Runtime parsing images
