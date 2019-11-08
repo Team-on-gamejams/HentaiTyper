@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: DifficultyHard
   m_EditorClassIdentifier: 
   startSpeedMult: 1
-  slowmoSpeedMult: 0.8
-  wordSpeedMin: 3
-  wordSpeedMax: 7
-  speedAddPerWord: 1.5
-  wordTimerMin: 1.5
-  wordTimerMax: 2.5
-  timerAddPerWord: -0.1
+  slowmoSpeedMult: 0.5
+  slowmoMaxTime: 5
+  slowmoRefreshRate: 0.5
+  wordSpeedMin: 200
+  wordSpeedMax: 220
+  speedAddPerWord: 10
+  wordTimerMin: 0.5
+  wordTimerMax: 1
+  timerAddPerWord: -0.05

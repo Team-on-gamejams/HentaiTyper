@@ -8,15 +8,15 @@
   - [NO] Object pool for words & images
 - [NO] Keyboard temperature
 - [X] Score
-- [ ] Left-hand-only mode
+- [NO] Left-hand-only mode
 - [X] Slow motion
   - [X] UI
 - [NO] FBI! Hold ESC to hide
-- [ ] Different difficulty
+- [X] Different difficulty
 - [NO] Highscores
 - [X] Pause
 - [X] Menus
   - [NO] Menus animation
   - [X] Better menus
 - [ ] Sounds
-- [ ] Runtime parsing images
+- [NO] Runtime parsing images

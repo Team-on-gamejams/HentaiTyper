@@ -7,13 +7,13 @@ public class MainMenu : MenuBase {
 	public void OnPlayClick() {
 		GameMenu gameMenu = MenuManager.GetNeededMenu<GameMenu>();
 		gameMenu.isLeftMode = false;
-		MenuManager.TransitTo(gameMenu);
+		MenuManager.TransitTo(MenuManager.GetNeededMenu<DifficultiesMenu>());
 	}
 
 	public void OnPlayLeftClick() {
 		GameMenu gameMenu = MenuManager.GetNeededMenu<GameMenu>();
 		gameMenu.isLeftMode = true;
-		MenuManager.TransitTo(gameMenu);
+		MenuManager.TransitTo(MenuManager.GetNeededMenu<DifficultiesMenu>());
 	}
 
 	public void OnCreditsClick() {

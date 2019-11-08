@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour {
 		ProcessInput();
 	}
 
-	public void StartGame(bool isLeftMode) {
+	public void StartGame(bool isLeftMode, byte difficultyLevel) {
 		IsPaused = false;
 		isLose = false;
 		scoreText.text = (score = 0).ToString();
@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour {
 		movingWords.Clear();
 
 		wordsData = wordsDataList[isLeftMode ? 1 : 0];
-		difficulty = difficulties[1];
+		difficulty = difficulties[difficultyLevel];
 
 		currSlowmo = difficulty.slowmoMaxTime;
 		slowmoSlider.Init(0, currSlowmo);

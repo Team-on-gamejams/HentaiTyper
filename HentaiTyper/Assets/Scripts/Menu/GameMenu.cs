@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameMenu : MenuBase {
 	public bool isLeftMode;
+	public byte difficulty;
 
 	GameManager gameManager;
 
@@ -14,7 +15,7 @@ public class GameMenu : MenuBase {
 	}
 
 	protected override void OnEnter() {
-		gameManager.StartGame(isLeftMode);
+		gameManager.StartGame(isLeftMode, difficulty);
 	}
 
 	protected override void OnExit() {
