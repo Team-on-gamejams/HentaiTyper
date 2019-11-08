@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+using Random = UnityEngine.Random;
+
 public class MovingWord : MonoBehaviour {
 	public static float speedMult = 1.0f;
 	public static float endX = 0.0f;
@@ -48,6 +50,10 @@ public class MovingWord : MonoBehaviour {
 			if (transform.position.x < endX)
 				onReachEnd?.Invoke();
 		}
+	}
+
+	public Sprite GetRandomImage() {
+		return word.images[Random.Range(0, word.images.Count)];
 	}
 
 	void OnTyped() {

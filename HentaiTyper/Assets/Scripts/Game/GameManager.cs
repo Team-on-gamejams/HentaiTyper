@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] List<WordsData> wordsDataList;
 
 	[SerializeField] GameObject MovingWordPrefab;
+	[SerializeField] GameObject FlyingImagePrefab;
 
 	GameDifficulty difficulty;
 	WordsData wordsData;
@@ -160,6 +161,17 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void OnWordTyped() {
+		GameObject go = Instantiate(
+			FlyingImagePrefab, 
+			mainCamera.ViewportToScreenPoint(new Vector3(Random.Range(0.4f, 0.6f), Random.Range(0.4f, 0.6f))),
+			Quaternion.identity,
+			transform
+		);
+		FlyingImage image = go.GetComponent<FlyingImage>();
+
+		image.SetImage(movingWords[0].GetRandomImage(), movingWords[0].transform.position);
+
+		Destroy(movingWords[0].gameObject);
 		movingWords.RemoveAt(0);
 	}
 

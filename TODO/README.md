@@ -2,7 +2,7 @@
   - [X] Words appear & moving
     - [ ] Better look for words
   - [X] Typing
-  - [ ] Arts appear
+  - [X] Arts appear
   - [X] Lose condition
   - [ ] Keyboard UI
   - [ ] Object pool for words & images

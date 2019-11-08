@@ -13,21 +13,44 @@ MonoBehaviour:
   m_Name: WordsData
   m_EditorClassIdentifier: 
   words:
-  - word: baka
+  - word: maeve
     images:
-    - {fileID: 21300000, guid: 64c131aecaa4d034faf35d35d53fae29, type: 3}
-  - word: b-baka
-    images:
-    - {fileID: 21300000, guid: 64c131aecaa4d034faf35d35d53fae29, type: 3}
-    - {fileID: 21300000, guid: 4568cc50f64590940817d2d5b92655c5, type: 3}
-  - word: your
-    images:
-    - {fileID: 21300000, guid: a1dd9f950a40df84491d9f1ee1ced619, type: 3}
-    - {fileID: 21300000, guid: 73ef9f5d5aa0c704993d96d83317db8a, type: 3}
-  - word: mama
-    images:
-    - {fileID: 21300000, guid: f0ab82acfcf66f34db904364745a305a, type: 3}
-    - {fileID: 21300000, guid: 0742b6500c8188245b64c583fd680107, type: 3}
-  - word: obama
-    images:
-    - {fileID: 21300000, guid: 3d21bed8949928041875f304eb9af6fd, type: 3}
+    - {fileID: 21300000, guid: f019485bcfb963945963359cb08f7b91, type: 3}
+    - {fileID: 21300000, guid: df34fbbec7256264b92bab9b2d40868b, type: 3}
+    - {fileID: 21300000, guid: d6182b730c5d0a54b990e29cb674bd34, type: 3}
+    - {fileID: 21300000, guid: befa81c064dd7e1469b0084cd8da92ef, type: 3}
+    - {fileID: 21300000, guid: b2f15436b8671c946bb06062df2aff24, type: 3}
+    - {fileID: 21300000, guid: f28af7e092ffc7f44bf3068feb2bc7ea, type: 3}
+    - {fileID: 21300000, guid: d28aeac25a8158147b1dee5071444146, type: 3}
+    - {fileID: 21300000, guid: fc524bfcba2be2641a4334006a5c99d3, type: 3}
+    - {fileID: 21300000, guid: 780261718e5f77b449b443f22a8f6893, type: 3}
+    - {fileID: 21300000, guid: c0c09b3131531054684906a9c31d401e, type: 3}
+    - {fileID: 21300000, guid: 55a71d84b27a7d94c927ac280a9f8b93, type: 3}
+    - {fileID: 21300000, guid: 1df4baba2add380499fd8626afccd1de, type: 3}
+    - {fileID: 21300000, guid: 5fa85073f01015d4385cd4ebcbd76203, type: 3}
+    - {fileID: 21300000, guid: 74ecb51b9f170904b928c8e4234d076f, type: 3}
+    - {fileID: 21300000, guid: 195ea4fee09187b438ef2b6bf69afbd7, type: 3}
+    - {fileID: 21300000, guid: 2d303ddc69c585c4881b3f8ef96d0a98, type: 3}
+    - {fileID: 21300000, guid: 9e45974c197ad8442aafeca5bdd7ccf7, type: 3}
+    - {fileID: 21300000, guid: 9d9bc83ab180f8e4eb0aeba14c82c9da, type: 3}
+    - {fileID: 21300000, guid: cb59622ade214e148aa26753be0e3a48, type: 3}
+    - {fileID: 21300000, guid: 3165c84dbefbe40469371e394f8dfc48, type: 3}
+    - {fileID: 21300000, guid: dcee39929bcb30e44b9cec00954a3eca, type: 3}
+    - {fileID: 21300000, guid: 1a77fc125eefb324d824bf34d0b43ddb, type: 3}
+    - {fileID: 21300000, guid: 5c6bd2f40549d494480eebe44d0eed61, type: 3}
+    - {fileID: 21300000, guid: 6b346993b0870c44593deafdd1dd9b38, type: 3}
+    - {fileID: 21300000, guid: 0d42f883c9e6e884db8cec31c8308733, type: 3}
+    - {fileID: 21300000, guid: 67154a5d2e628f242b9639f00b51fcde, type: 3}
+    - {fileID: 21300000, guid: ee89078d1fef0044eb665726b41fbb15, type: 3}
+    - {fileID: 21300000, guid: 01a8278c90b41044bbda35fee9689225, type: 3}
+    - {fileID: 21300000, guid: 90babf36675a40643afa63852e461b6d, type: 3}
+    - {fileID: 21300000, guid: 3841448b40f1fa841a560cf759b10ca5, type: 3}
+    - {fileID: 21300000, guid: 2482409cb63d7024e9d120973f23e25c, type: 3}
+    - {fileID: 21300000, guid: ffa44d6a13776874c8aa5f4790b27da1, type: 3}
+    - {fileID: 21300000, guid: 75e82acf2fda92546bdb8d177673f22c, type: 3}
+    - {fileID: 21300000, guid: 85b4043aecbd64f4c9623ae61ac40621, type: 3}
+    - {fileID: 21300000, guid: 78ff08f39d444c44d839a57b4f458b3a, type: 3}
+    - {fileID: 21300000, guid: ac898a6edc1b1864686d3579071b120f, type: 3}
+    - {fileID: 21300000, guid: 21aa9ef989cce6149a11177474a686e9, type: 3}
+    - {fileID: 21300000, guid: 6bbb5fec13e048d49a012bceaca78630, type: 3}
+    - {fileID: 21300000, guid: c1a4819c793f4134c919f57a706ba3c2, type: 3}
