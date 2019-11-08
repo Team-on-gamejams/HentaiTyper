@@ -22,12 +22,12 @@ public class FlyingImage : MonoBehaviour {
 		image.rectTransform.sizeDelta /= Random.Range(1f, 3f);
 		image.transform.position = pos;
 		image.transform.localRotation = Quaternion.Euler(0, 0, Random.Range(-25f, 25f));
-		image.transform.SetAsFirstSibling();
 
 		Color c = image.color;
 		c.a = Random.Range(0.4f, 0.8f);
 		image.color = c;
 
+		transform.SetAsFirstSibling();
 		StartCoroutine(ShowCoroutine());
 	}
 

@@ -29,7 +29,7 @@ public class MovingWord : MonoBehaviour {
 
 		letters = new TextMeshProUGUI[word.word.Length];
 		for(byte i = 0; i < letters.Length; ++i) {
-			letters[i] = Instantiate(letterPrefab, transform.position + new Vector3(i * 52, 0), Quaternion.identity, transform).GetComponentInChildren<TextMeshProUGUI>();
+			letters[i] = Instantiate(letterPrefab, transform.position + new Vector3(i * 52 * transform.lossyScale.x, 0) , Quaternion.identity, transform).GetComponentInChildren<TextMeshProUGUI>();
 			letters[i].text = word.word[i].ToString();
 		}
 	}
