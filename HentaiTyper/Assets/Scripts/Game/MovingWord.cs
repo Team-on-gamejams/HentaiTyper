@@ -56,7 +56,7 @@ public class MovingWord : MonoBehaviour {
 	public void ProcessMove() {
 		if (!isTyped) {
 			transform.Translate(-speed * speedMult * Time.deltaTime, 0, 0);
-			if (transform.position.x < endX)
+			if (letters[currLetter].transform.position.x < endX)
 				onReachEnd?.Invoke();
 		}
 	}
