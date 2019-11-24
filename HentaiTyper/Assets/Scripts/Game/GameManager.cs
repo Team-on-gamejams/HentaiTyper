@@ -53,8 +53,13 @@ public class GameManager : MonoBehaviour {
 		if(movingWords.Count == 0 && (elapsedTime += Time.deltaTime) >= currTimer) 
 			LaunchNewWord();
 
-		foreach (MovingWord word in movingWords) 
-			word.ProcessMove();
+		for(byte i = 0; i < movingWords.Count; ++i) {
+			movingWords[i].ProcessMove();
+			if(movingWords[i] == null) {
+				movingWords.RemoveAt(i);
+				--i;
+			}
+		}
 
 		ProcessSlowmo();
 		ProcessInput();
@@ -181,10 +186,12 @@ public class GameManager : MonoBehaviour {
 	void GetDamage(byte missedLetter) {
 		currHp -= missedLetter * difficulty.hpLosePerLetter;
 		hpSlider.UpdateValue(currHp);
-		if (currHp <= 0)
+		if (currHp <= 0) {
 			Lose();
-		else
+		}
+		else {
 			Destroy(movingWords[0].gameObject);
+		}
 	}
 
 	void Lose() {

@@ -15,7 +15,12 @@ public class HpSlider : MonoBehaviour {
 	}
 
 	public void UpdateValue(float currFill) {
-		foreach (var slider in sliders) 
-			slider.value = currFill;
+		foreach (var slider in sliders) {
+			LeanTween.cancel(gameObject, false);
+			LeanTween.value(slider.value, currFill, 0.5f)
+				.setOnUpdate((float fill)=> {
+					slider.value = fill;
+				});
+		}
 	}
 }

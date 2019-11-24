@@ -21,4 +21,4 @@
 - [NO] Sounds
 - [NO] Runtime parsing images
 - [X] New HP system
-  - [ ] Better look
+  - [X] Better look
