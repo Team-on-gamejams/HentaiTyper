@@ -18,5 +18,6 @@
 - [X] Menus
   - [NO] Menus animation
   - [X] Better menus
-- [ ] Sounds
+- [NO] Sounds
 - [NO] Runtime parsing images
+- [ ] New HP system
