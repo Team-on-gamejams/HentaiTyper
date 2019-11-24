@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour {
 		if (!IsPlaying || IsPaused)
 			return;
 
-		if((elapsedTime += Time.deltaTime) >= currTimer) 
+		if(movingWords.Count == 0 && (elapsedTime += Time.deltaTime) >= currTimer) 
 			LaunchNewWord();
 
 		foreach (MovingWord word in movingWords) 
@@ -148,7 +148,7 @@ public class GameManager : MonoBehaviour {
 
 		if (movingWords.Count != 0) {
 			foreach (char c in Input.inputString) {
-				if (char.IsLetterOrDigit(c) || c == '-' || c == ' ') {
+				if (char.IsLetterOrDigit(c) || c == '-' || c == ' ' || c == '!' || c == '?' || c == ':' || c == '.' || c == ',') {
 					char cLower = char.ToLower(c);
 					movingWords[0].ProcessChar(cLower);
 				}

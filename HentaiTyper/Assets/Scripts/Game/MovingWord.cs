@@ -35,10 +35,14 @@ public class MovingWord : MonoBehaviour {
 	}
 
 	public bool ProcessChar(char c) {
-		if(!isTyped && word.word[currLetter] == c) {
+		if(!isTyped && char.ToLower(word.word[currLetter]) == c) {
 			if(currLetter != word.word.Length - 1) {
 				letters[currLetter].text = "_";
 				++currLetter;
+
+				while(letters[currLetter].text == " ") {
+					++currLetter;
+				}
 			}
 			else {
 				letters[currLetter].text = "_";
