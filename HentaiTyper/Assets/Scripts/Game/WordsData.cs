@@ -8,6 +8,7 @@ using UnityEditor;
 public class WordsData : ScriptableObject {
 	public List<Word> words;
 
+#if UNITY_EDITOR
 	public void ParseWordsData() {
 		words = new List<Word>();
 		string[] guids = AssetDatabase.FindAssets("t:sprite", new[] { "Assets/Sprites/Manga" });
@@ -20,6 +21,7 @@ public class WordsData : ScriptableObject {
 			});
 		}
 	}
+#endif
 }
 
 [Serializable]
@@ -28,6 +30,7 @@ public class Word {
 	public List<Sprite> images;
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(WordsData))]
 public class WordsDataEditor : Editor {
 	public override void OnInspectorGUI() {
@@ -39,3 +42,4 @@ public class WordsDataEditor : Editor {
 		}
 	}
 }
+#endif
