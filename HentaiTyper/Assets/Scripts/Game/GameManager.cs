@@ -167,7 +167,7 @@ public class GameManager : MonoBehaviour {
 		);
 		FlyingImage image = go.GetComponent<FlyingImage>();
 
-		image.SetImage(movingWords[0].GetRandomImage(), movingWords[0].transform.position);
+		image.SetImage(movingWords[0].GetRandomImage(), go.transform.position);
 
 		Destroy(movingWords[0].gameObject);
 		scoreText.text = (score += movingWords[0].GetScore()).ToString();
