@@ -55,6 +55,6 @@ public class FlyingImage : MonoBehaviour {
 		}
 
 		yield return null;
-		Destroy(gameObject);
+		//Destroy(gameObject);
 	}
 }

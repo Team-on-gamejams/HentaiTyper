@@ -19,10 +19,12 @@ public class GameManager : MonoBehaviour {
 
 	[SerializeField] GameObject movingWordPrefab;
 	[SerializeField] GameObject flyingImagePrefab;
+	[SerializeField] Transform imagesParent;
 
 	GameDifficulty difficulty;
 	WordsData wordsData;
 	List<MovingWord> movingWords;
+	List<FlyingImage> images;
 
 	bool isLose;
 	int score;
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour {
 
 	void Awake() {
 		movingWords = new List<MovingWord>();
+		images = new List<FlyingImage>();
 
 		MovingWord.endX = mainCamera.ViewportToWorldPoint(new Vector3(MovingWord.endX, 0)).x;
 	}
@@ -74,6 +77,11 @@ public class GameManager : MonoBehaviour {
 			if(word)
 				Destroy(word.gameObject);
 		movingWords.Clear();
+
+		foreach (var image in images)
+			if (image)
+				Destroy(image.gameObject);
+		images.Clear();
 
 		wordsData = wordsDataList[isLeftMode ? 1 : 0];
 		difficulty = difficulties[difficultyLevel];
@@ -166,13 +174,15 @@ public class GameManager : MonoBehaviour {
 	void OnWordTyped(byte typedLetters) {
 		GameObject go = Instantiate(
 			flyingImagePrefab, 
-			mainCamera.ViewportToScreenPoint(new Vector3(Random.Range(0.4f, 0.6f), Random.Range(0.4f, 0.6f))),
+			mainCamera.ViewportToScreenPoint(new Vector3(Random.Range(0.3f, 0.7f), Random.Range(0.3f, 0.7f))),
 			Quaternion.identity,
-			transform
+			imagesParent
 		);
 		FlyingImage image = go.GetComponent<FlyingImage>();
 
 		image.SetImage(movingWords[0].GetRandomImage(), go.transform.position);
+		image.transform.SetAsLastSibling();
+		images.Add(image);
 
 		Destroy(movingWords[0].gameObject);
 		scoreText.text = (score += movingWords[0].GetScore()).ToString();
@@ -202,5 +212,8 @@ public class GameManager : MonoBehaviour {
 		foreach (var word in movingWords)
 			if (word)
 				Destroy(word.gameObject);
+		foreach (var image in images)
+			if (image)
+				Destroy(image.gameObject);
 	}
 }
