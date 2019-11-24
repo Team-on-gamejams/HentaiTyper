@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 	[SerializeField] MenuManager menuManager;
 	[SerializeField] Camera mainCamera;
 	[SerializeField] SlowmoSlider slowmoSlider;
+	[SerializeField] HpSlider hpSlider;
 	[SerializeField] TextMeshProUGUI scoreText;
 
 	[SerializeField] List<GameDifficulty> difficulties;
@@ -35,6 +36,9 @@ public class GameManager : MonoBehaviour {
 	float currTimerMax;
 	float currTimer;
 	float elapsedTime;
+
+	float maxHp;
+	float currHp;
 
 	void Awake() {
 		movingWords = new List<MovingWord>();
@@ -78,6 +82,9 @@ public class GameManager : MonoBehaviour {
 		currTimerMin = difficulty.wordTimerMin;
 		currTimerMax = difficulty.wordTimerMax;
 
+		currHp = maxHp = difficulty.hpMax;
+		hpSlider.Init(0, maxHp);
+
 		elapsedTime = 0;
 		currTimer = Random.Range(currTimerMin, currTimerMax);
 	}
@@ -97,7 +104,7 @@ public class GameManager : MonoBehaviour {
 
 		movingWord.speed = Random.Range(currSpeedMin, currSpeedMax);
 		movingWord.SetWord(RandomEx.GetRandom(wordsData.words));
-		movingWord.onReachEnd += Lose;
+		movingWord.onReachEnd += GetDamage;
 		movingWord.onTyped += OnWordTyped;
 
 		movingWords.Add(movingWord);
@@ -132,20 +139,6 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void ProcessInput() {
-		//foreach (char c in Input.inputString) {
-		//	bool processThis = false;
-		//	if (char.IsLetterOrDigit(c) || c == '-' || c == ' ') {
-		//		char cLower = char.ToLower(c);
-		//		foreach (MovingWord word in movingWords) {
-		//			processThis = word.ProcessChar(cLower);
-		//			if (processThis)
-		//				break;
-		//		}
-		//	}
-		//	if (processThis)
-		//		break;
-		//}
-
 		if (movingWords.Count != 0) {
 			foreach (char c in Input.inputString) {
 				if (char.IsLetterOrDigit(c) || c == '-' || c == ' ' || c == '!' || c == '?' || c == ':' || c == '.' || c == ',') {
@@ -165,7 +158,7 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	void OnWordTyped() {
+	void OnWordTyped(byte typedLetters) {
 		GameObject go = Instantiate(
 			flyingImagePrefab, 
 			mainCamera.ViewportToScreenPoint(new Vector3(Random.Range(0.4f, 0.6f), Random.Range(0.4f, 0.6f))),
@@ -179,6 +172,19 @@ public class GameManager : MonoBehaviour {
 		Destroy(movingWords[0].gameObject);
 		scoreText.text = (score += movingWords[0].GetScore()).ToString();
 		movingWords.RemoveAt(0);
+
+		if ((currHp += typedLetters * difficulty.hpRegenPerLetter) > maxHp) 
+			currHp = maxHp;
+		hpSlider.UpdateValue(currHp);
+	}
+
+	void GetDamage(byte missedLetter) {
+		currHp -= missedLetter * difficulty.hpLosePerLetter;
+		hpSlider.UpdateValue(currHp);
+		if (currHp <= 0)
+			Lose();
+		else
+			Destroy(movingWords[0].gameObject);
 	}
 
 	void Lose() {

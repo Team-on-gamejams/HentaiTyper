@@ -19,6 +19,9 @@ MonoBehaviour:
   wordSpeedMin: 150
   wordSpeedMax: 160
   speedAddPerWord: 5
-  wordTimerMin: 1.5
-  wordTimerMax: 2
-  timerAddPerWord: -0.01
+  wordTimerMin: 1
+  wordTimerMax: 1
+  timerAddPerWord: 0
+  hpMax: 150
+  hpRegenPerLetter: 2
+  hpLosePerLetter: 5

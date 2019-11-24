@@ -11,8 +11,8 @@ public class MovingWord : MonoBehaviour {
 	public static float endX = 0.0f;
 
 	[NonSerialized] public float speed;
-	[NonSerialized] public Action onTyped;
-	[NonSerialized] public Action onReachEnd;
+	[NonSerialized] public Action<byte> onTyped;
+	[NonSerialized] public Action<byte> onReachEnd;
 
 	[SerializeField] GameObject letterPrefab;
 
@@ -20,12 +20,14 @@ public class MovingWord : MonoBehaviour {
 	Word word;
 	byte currLetter;
 	bool isTyped;
+	bool isReachEnd;
 
 	public void SetWord(Word _word) {
 		word = _word;
 
 		currLetter = 0;
 		isTyped = false;
+		isReachEnd = false;
 
 		letters = new TextMeshProUGUI[word.word.Length];
 		for(byte i = 0; i < letters.Length; ++i) {
@@ -35,7 +37,7 @@ public class MovingWord : MonoBehaviour {
 	}
 
 	public bool ProcessChar(char c) {
-		if(!isTyped && char.ToLower(word.word[currLetter]) == c) {
+		if(!isTyped && !isReachEnd && char.ToLower(word.word[currLetter]) == c) {
 			if(currLetter != word.word.Length - 1) {
 				letters[currLetter].text = "_";
 				++currLetter;
@@ -54,10 +56,12 @@ public class MovingWord : MonoBehaviour {
 	}
 
 	public void ProcessMove() {
-		if (!isTyped) {
+		if (!isTyped && !isReachEnd) {
 			transform.Translate(-speed * speedMult * Time.deltaTime, 0, 0);
-			if (letters[currLetter].transform.position.x < endX)
-				onReachEnd?.Invoke();
+			if (!isReachEnd && letters[currLetter].transform.position.x < endX) {
+				isReachEnd = true;
+				onReachEnd?.Invoke((byte)(word.word.Length - currLetter));
+			}
 		}
 	}
 
@@ -71,6 +75,6 @@ public class MovingWord : MonoBehaviour {
 
 	void OnTyped() {
 		isTyped = true;
-		onTyped?.Invoke();
+		onTyped?.Invoke((byte)word.word.Length);
 	}
 }

@@ -19,4 +19,9 @@ public class GameDifficulty : ScriptableObject {
 	public float wordTimerMin;
 	public float wordTimerMax;
 	public float timerAddPerWord;
+
+	[Header("HP")]
+	public float hpMax;
+	public float hpRegenPerLetter;
+	public float hpLosePerLetter;
 }

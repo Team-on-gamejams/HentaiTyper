@@ -20,4 +20,5 @@
   - [X] Better menus
 - [NO] Sounds
 - [NO] Runtime parsing images
-- [ ] New HP system
+- [X] New HP system
+  - [ ] Better look

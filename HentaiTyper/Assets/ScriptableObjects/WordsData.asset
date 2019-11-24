@@ -13,12 +13,81 @@ MonoBehaviour:
   m_Name: WordsData
   m_EditorClassIdentifier: 
   words:
-  - word: Henshin
+  - word: Amakano
+    images:
+    - {fileID: 21300000, guid: 10dc492dbc8a64d4eae517095c60809c, type: 3}
+  - word: Bishoujo Club
+    images:
+    - {fileID: 21300000, guid: eac3262d830f95c45a885fe074c9cc73, type: 3}
+  - word: Boy Meets Harem
+    images:
+    - {fileID: 21300000, guid: 731e65c392844424b996796ba422f65d, type: 3}
+  - word: Dropout
+    images:
+    - {fileID: 21300000, guid: ae3fe4f32ad2b84488c020e772b4229b, type: 3}
+  - word: Emergence
     images:
     - {fileID: 21300000, guid: e865ad593394aaa4fb0f83eb6f0840f5, type: 3}
-  - word: SECRET FAN MEETING
+  - word: Giri Giri Sisters
     images:
-    - {fileID: 21300000, guid: f99a937ba5302d84fb4d1ebfcf9caa1e, type: 3}
+    - {fileID: 21300000, guid: fe5b08770b9dd7c438e6da85ecdaaf4f, type: 3}
+  - word: Hatsu Inu
+    images:
+    - {fileID: 21300000, guid: b5364e2508de9444ba6d1329ac4289a4, type: 3}
+  - word: HHH Triple H
+    images:
+    - {fileID: 21300000, guid: 07d2f42b83125e94ba038e53e113ddec, type: 3}
+  - word: Imouto Paradise!
+    images:
+    - {fileID: 21300000, guid: b2109e70bd70aa74793744928e8034d4, type: 3}
   - word: Itadaki! Seieki
     images:
     - {fileID: 21300000, guid: 26b0cce742b528541b78882efa31fa56, type: 3}
+  - word: Little Monica Monogatari
+    images:
+    - {fileID: 21300000, guid: 27b316d61890d1647833a96d19bb494a, type: 3}
+  - word: Nudist Beach ni Shuugaku Ryokou de!!
+    images:
+    - {fileID: 21300000, guid: 2ab28c24af7aada4d86c5a6bac6a5b49, type: 3}
+  - word: Pretty x Cation
+    images:
+    - {fileID: 21300000, guid: ca97975415362e94f8dd60003e725374, type: 3}
+  - word: Purimu no Nikki
+    images:
+    - {fileID: 21300000, guid: 3ea2c920615f2aa4bab94e6476029cd8, type: 3}
+  - word: SECRET FAN MEETING
+    images:
+    - {fileID: 21300000, guid: f99a937ba5302d84fb4d1ebfcf9caa1e, type: 3}
+  - word: Shocking Pink
+    images:
+    - {fileID: 21300000, guid: 8e0b83145c7135d48b61b331788e651b, type: 3}
+  - word: Shoujo Ramune
+    images:
+    - {fileID: 21300000, guid: ee141110d691e3144a12658ca830d570, type: 3}
+  - word: Shoujo x Shoujo x Shoujo
+    images:
+    - {fileID: 21300000, guid: 5b77aa9b75bffd34db233700e7ffdcd8, type: 3}
+  - word: Take On Me
+    images:
+    - {fileID: 21300000, guid: 30ad4118e47968246b9212a06b479086, type: 3}
+  - word: Tamashii Insert
+    images:
+    - {fileID: 21300000, guid: 646acccfe8526f3438daa4826eb9e946, type: 3}
+  - word: Tayu Tayu
+    images:
+    - {fileID: 21300000, guid: 8299e085871d08e439f3e8a9962ea675, type: 3}
+  - word: Tsumamigui
+    images:
+    - {fileID: 21300000, guid: 253225601b9060d47a0679bdc48b0232, type: 3}
+  - word: Twin Milf
+    images:
+    - {fileID: 21300000, guid: 521bbac363f9dd14a8c00e2f7f7341a7, type: 3}
+  - word: Virgin Tweet
+    images:
+    - {fileID: 21300000, guid: 1cf7b1a1e5d95224988748e45855b128, type: 3}
+  - word: Welcome to Tokoharu Apartments
+    images:
+    - {fileID: 21300000, guid: f9f2b293d3e6f974582d1055c1692bb2, type: 3}
+  - word: Witchcraft
+    images:
+    - {fileID: 21300000, guid: ecb192707d1e5b64f8348444d65d4775, type: 3}
